@@ -20,24 +20,11 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-#if __has_include("DDLog.h")
-#import <CocoaLumberjack/DDLog.h>
-
-#define SRLogError(frmt, ...)   DDLogError(frmt, ##__VA_ARGS__)
-#define SRLogWarn(frmt, ...)    DDLogWarn(frmt, ##__VA_ARGS__)
-#define SRLogInfo(frmt, ...)    DDLogInfo(frmt, ##__VA_ARGS__)
-#define SRLogDebug(frmt, ...)   DDLogDebug(frmt, ##__VA_ARGS__)
-#define SRLogVerbose(frmt, ...) DDLogVerbose(frmt, ##__VA_ARGS__)
-
-#else
-
-#define SRLogError(frmt, ...)      do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
-#define SRLogWarn(frmt, ...)       do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
-#define SRLogInfo(frmt, ...)       do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
-#define SRLogDebug(frmt, ...)      do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
-#define SRLogVerbose(frmt, ...)    do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
-
-#endif
+#define SRLogError(frmt, ...)      //do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
+#define SRLogWarn(frmt, ...)       //do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
+#define SRLogInfo(frmt, ...)       //do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
+#define SRLogDebug(frmt, ...)      //do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
+#define SRLogVerbose(frmt, ...)    //do{ NSLog((frmt), ##__VA_ARGS__); } while(0)
 
 #define SRLogPrefixedError(type, frmt, ...) SRLogError(@"%@:\t%@", type, [NSString stringWithFormat:frmt, ##__VA_ARGS__]);
 #define SRLogPrefixedWarn(type, frmt, ...) SRLogWarn(@"%@:\t%@", type, [NSString stringWithFormat:frmt, ##__VA_ARGS__]);
